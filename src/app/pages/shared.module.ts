@@ -4,12 +4,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DateConverterPipe } from 'src/app/pipes/date-converter.pipe';
 import { EnumKeyPipe } from 'src/app/pipes/enum-key.pipe';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { IsInvalidDirective } from '../directives/is-invalid.directive';
 
 
 
 @NgModule({
   declarations: [
     DateConverterPipe,
+    IsInvalidDirective,
     EnumKeyPipe
   ],
   imports: [
@@ -21,6 +23,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   exports: [
     CommonModule,
     FormsModule,
+    IsInvalidDirective,
     ReactiveFormsModule,
     FontAwesomeModule,
     DateConverterPipe,
