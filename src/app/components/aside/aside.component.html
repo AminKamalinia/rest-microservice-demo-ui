@@ -1,0 +1,18 @@
+<aside [ngClass]="{'sidebarWidth' : (isToggleCheck == true)}">
+    <nav>
+        <ul>
+            <li>
+                <a routerLink="/home/default" routerLinkActive="active-link"><fa-icon [icon]="faHomeAlt"></fa-icon>
+                    Home</a>
+            </li>
+            <li>
+                <a routerLink="/vehicle/add-vehicle" routerLinkActive="active-link"><fa-icon [icon]="faCarOn"></fa-icon>
+                    Add a Vehicle</a>
+            </li>
+            <li>
+                <a routerLink="/vehicle/vehicle-list" routerLinkActive="active-link"><fa-icon
+                        [icon]="faCarAlt"></fa-icon> Vehicle</a>
+            </li>
+        </ul>
+    </nav>
+</aside>

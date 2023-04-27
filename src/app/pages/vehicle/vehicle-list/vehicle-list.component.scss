@@ -1,0 +1,21 @@
+table {
+    td {
+        button {
+            color: inherit;
+            border: none;
+            cursor: pointer;
+            background-color: transparent;
+            transition: all ease 1s;
+            -o-transition: all ease 1s;
+            -moz-transition: all ease 1s;
+            -webkit-transition: all ease 1s;
+
+            &:hover {
+                -webkit-transform: scale(1.2);
+                -moz-transform: scale(1.2);
+                -o-transform: scale(1.2);
+                transform: scale(1.2);
+            }
+        }
+    }
+}

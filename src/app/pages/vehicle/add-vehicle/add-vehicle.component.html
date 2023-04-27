@@ -1,0 +1,63 @@
+<div class="row">
+    <div class="col-sm-12">
+        <section class="card">
+            <div class="card-body">
+                <h5 class="card-title">Add a vehicle</h5>
+                <form class="row g-3" [formGroup]="vehicleForm" (ngSubmit)="onSubmit()">
+                    <div class="col-md-6">
+                        <label for="vin" class="form-label">VIN</label>
+                        <input type="text" class="form-control" id="vin" formControlName="vin">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="vehicleMakerEnum" class="form-label">Vehicle maker</label>
+                        <select class="form-control" id="vehicleMakerEnum" name="vehicleMakerEnum"
+                            formControlName="vehicleMaker">
+                            <option [ngValue]="null">Please select an item </option>
+                            <option *ngFor="let enumItem of vehicleMakerEnum | enumKey" [ngValue]="enumItem.key">
+                                {{enumItem.value}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inspectionDate" class="form-label">Inspection date</label>
+                        <input type="datetime-local" class="form-control" id="inspectionDate" formControlName="inspectionDate">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="vehicleYear" class="form-label">Vehicle year</label>
+                        <input type="number" class="form-control" id="vehicleYear" formControlName="vehicleYear">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="vehicleModel" class="form-label">Vehicle model</label>
+                        <input type="text" class="form-control" id="vehicleModel" formControlName="vehicleModel">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="inspectorName" class="form-label">Inspector name</label>
+                        <input type="text" class="form-control" id="inspectorName" formControlName="inspectorName">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inspectionLocation" class="form-label">Inspection location</label>
+                        <input type="text" class="form-control" id="inspectionLocation"
+                            formControlName="inspectionLocation">
+                    </div>
+                    <div class="col-md-12">
+                        <label for="notes" class="form-label">Notes</label>
+                        <textarea class="form-control" id="notes" formControlName="notes"></textarea>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="passOrFail"
+                                formControlName="passOrFail">
+                            <label class="form-check-label" for="passOrFail">
+                                Pass/Fail
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary" [disabled]="!vehicleForm.valid">Add</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>

@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'rest-microservice-demo-ui';
+
+  public isCheck = true;
+
+  public onToggleClick(isCheck: boolean): void {
+    this.isCheck = isCheck;
+  }
 }

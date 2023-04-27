@@ -1,0 +1,88 @@
+@import "../../scss/variables.scss";
+
+header {
+    position: fixed;
+    z-index: 1000;
+    top: 0px;
+    width: 100%;
+    height: $header-height;
+    background-color: $header-background-color;
+    -webkit-box-shadow: 0px 2px 5px 0px $boxshadow-color;
+    -moz-box-shadow: 0px 2px 5px 0px $boxshadow-color;
+    box-shadow: 0px 2px 5px 0px $boxshadow-color;
+
+    figure {
+        padding: 10px;
+        margin: 0px 0px 0px 15px;
+
+        img {
+            height: 50px;
+        }
+    }
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 23px;
+
+        input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+
+            &:checked+.slider {
+                background: $toggle-background-color;
+                background: linear-gradient(90deg, $toggle-background-color 0%, $toggle-background-color 8%, $linear-gradient-third-color 61%);
+
+                &:before {
+                    -webkit-transform: translateX(36px);
+                    -moz-transform: translateX(36px);
+                    -ms-transform: translateX(36px);
+                    -o-transform: translateX(36px);
+                    transform: translateX(36px);
+                }
+            }
+
+            &:focus+.slider {
+                box-shadow: 0 0 1px $toggle-background-color;
+            }
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: $toggle-slider-background-color;
+            -webkit-transition: 0.4s;
+            -moz-transition: 0.4s;
+            -o-transition: 0.4s;
+            transition: 0.4s;
+
+            &:before {
+                position: absolute;
+                content: "";
+                height: 20px;
+                width: 20px;
+                left: 2px;
+                bottom: 2px;
+                background-color: $toggle-slider-before-background-color;
+                -webkit-transition: 0.4s;
+                -moz-transition: 0.4s;
+                -o-transition: 0.4s;
+                transition: 0.4s;
+            }
+
+            &.round {
+                border-radius: 34px;
+
+                &:before {
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}

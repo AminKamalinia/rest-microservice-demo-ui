@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="col-sm-12">
+        <section class="card">
+            <div class="card-body">
+                <h5 class="card-title">Vehicle list</h5>
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover table-sm">
+                        <thead>
+                            <tr>
+                                <th scope="col">VIN</th>
+                                <th scope="col">Vehicle maker</th>
+                                <th scope="col">Vehicle year</th>
+                                <th scope="col">Vehicle model</th>
+                                <th scope="col">Inspection date</th>
+                                <th scope="col">Inspector name</th>
+                                <th scope="col">Inspection location</th>
+                                <th scope="col">Pass/Fail</th>
+                                <th scope="col">Notes</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of vehicles">
+                                <td>{{item.vin}}</td>
+                                <td>{{vehicleMaker[item.vehicleMaker]}}</td>
+                                <td>{{item.vehicleYear}}</td>
+                                <td>{{item.vehicleModel}}</td>
+                                <td>{{item.inspectionDate | dateConverter:'MM/DD/yyyy HH:mm:ss'}}</td>
+                                <td>{{item.inspectorName}}</td>
+                                <td>{{item.inspectionLocation}}</td>
+                                <td>{{item.passOrFail}}</td>
+                                <td>{{item.notes}}</td>
+                                <td>
+                                    <button type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"
+                                        [routerLink]="['../edit-vehicle', {vin:item.vin}]">
+                                        <fa-icon [icon]="faPencilAlt"></fa-icon>
+                                    </button>
+                                    <!-- <button type="button"
+                                        data-bs-toggle="modal" data-bs-target="#staticBackdrop" title="Delete"
+                                        (click)="openAlertModal(item.Id)">
+                                        <fa-icon [icon]="faTrashAlt"></fa-icon>
+                                    </button> -->
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

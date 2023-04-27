@@ -1,0 +1,93 @@
+@import "../../scss/variables.scss";
+
+aside {
+    &::-webkit-scrollbar {
+        width: 2px;
+    }
+
+    &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px $boxshadow-color;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $toggle-background-color;
+        border-radius: 10px;
+
+        &:hover {
+            background: $toggle-background-color;
+        }
+    }
+
+    scrollbar-color: $toggle-background-color $boxshadow-color;
+    scrollbar-width: thin;
+
+    overflow-y: scroll;
+    width: 0px;
+
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s;
+
+    background-color: $sidebar-background-color;
+    height: calc(100% - #{$header-height});
+    top: $header-height;
+    position: fixed;
+    -webkit-box-shadow: 2px 0px 5px 0px $boxshadow-color;
+    -moz-box-shadow: 2px 0px 5px 0px $boxshadow-color;
+    box-shadow: 2px 0px 5px 0px $boxshadow-color;
+
+    nav {
+        ul {
+            padding: 0px;
+
+            li {
+                list-style: none;
+
+                a {
+                    display: block;
+                    width: 100%;
+                    padding: 5%;
+                    color: $sidebar-a-tag-color;
+                    text-decoration: none;
+                    -webkit-transition: all ease 0.4s;
+                    -moz-transition: all ease 0.4s;
+                    -o-transition: all ease 0.4s;
+                    transition: all ease 0.4s;
+                    cursor: pointer;
+                    background-color: transparent;
+
+                    &:hover {
+                        background-color: $sidebar-a-tag-hover-background-color;
+                    }
+
+                    &.active-link {
+                        background-color: $sidebar-a-tag-active-background-color;
+                    }
+
+                    i {
+                        -webkit-transition: all ease 0.4s;
+                        -moz-transition: all ease 0.4s;
+                        -o-transition: all ease 0.4s;
+                        transition: all ease 0.4s;
+
+                        &:nth-child(2) {
+                            position: absolute;
+                            right: 15px;
+                            margin-top: 4px;
+
+                            &.rtoate180 {
+                                transform: rotate(180deg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sidebarWidth {
+    width: $sidebar-width;
+}
