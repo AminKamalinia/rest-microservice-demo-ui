@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { faHomeAlt, faCarAlt,faCarOn } from '@fortawesome/free-solid-svg-icons';
+import { faHomeAlt, faCarAlt,faCarOn, faBuildingUser } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-aside',
@@ -13,6 +13,7 @@ export class AsideComponent {
   public faHomeAlt = faHomeAlt;
   public faCarAlt = faCarAlt;
   public faCarOn = faCarOn;
+  public faBuildingUser = faBuildingUser;
   //#endregion
 
   @Input()

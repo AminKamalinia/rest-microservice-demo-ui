@@ -5,6 +5,7 @@ import { DateConverterPipe } from 'src/app/pipes/date-converter.pipe';
 import { EnumKeyPipe } from 'src/app/pipes/enum-key.pipe';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IsInvalidDirective } from '../directives/is-invalid.directive';
+import { DeleteModalComponent } from '../components/delete-modal/delete-modal.component';
 
 
 
@@ -12,7 +13,8 @@ import { IsInvalidDirective } from '../directives/is-invalid.directive';
   declarations: [
     DateConverterPipe,
     IsInvalidDirective,
-    EnumKeyPipe
+    EnumKeyPipe,
+    DeleteModalComponent
   ],
   imports: [
     CommonModule,
@@ -25,6 +27,7 @@ import { IsInvalidDirective } from '../directives/is-invalid.directive';
     FormsModule,
     IsInvalidDirective,
     ReactiveFormsModule,
+    DeleteModalComponent,
     FontAwesomeModule,
     DateConverterPipe,
     EnumKeyPipe

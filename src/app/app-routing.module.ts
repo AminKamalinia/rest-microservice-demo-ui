@@ -11,6 +11,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/vehicle/vehicle.module').then(m => m.VehicleModule)
   },
   {
+    path: 'employee',
+    loadChildren: () => import('./pages/employee/employee.module').then(m => m.EmployeeModule)
+  },
+  {
+    path: 'department',
+    loadChildren: () => import('./pages/department/department.module').then(m => m.DepartmentModule)
+  },
+  {
     path: '',
     redirectTo: '/home/default',
     pathMatch: 'full'
